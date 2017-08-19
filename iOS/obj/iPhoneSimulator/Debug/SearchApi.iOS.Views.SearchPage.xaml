@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SearchApi.SearchPage">
+	<ContentPage.Padding>
+
+	<OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
+	</ContentPage.Padding>
+
+	<ContentPage.Content>
+
+		<StackLayout>
+			<Entry x:Name="_searchtext"/>
+			<Button Text="Search it !" Clicked="search_clicked"/>
+
+			<ListView x:Name="_lstView" ItemsSource="{Binding .}" HasUnevenRows="true">
+			<ListView.ItemTemplate>
+			<DataTemplate>
+
+						<ViewCell>
+						<StackLayout>
+								
+						<Label Text="{Binding name}" TextColor="Red"/>
+						<Label Text="{Binding snippet}"/>
+
+						</StackLayout>
+						</ViewCell>
+
+
+			</DataTemplate>
+
+			</ListView.ItemTemplate>
+
+			</ListView>
+
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
